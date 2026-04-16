@@ -11,7 +11,13 @@ class Personaje:
         if self == objetivo:
             return
 
-        objetivo.hp -= dano
+        # Ajuste por nivel
+        if self.nivel - objetivo.nivel >= 5:
+            dano *= 1.5
+        elif objetivo.nivel - self.nivel >= 5:
+            dano *= 0.5
+
+        objetivo.hp -= int(dano)
 
         if objetivo.hp <= 0:
             objetivo.hp = 0
