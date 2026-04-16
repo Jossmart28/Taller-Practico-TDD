@@ -94,3 +94,14 @@ def test_personaje_puede_curarse():
 
     # Assert
     assert personaje.hp == 700
+
+def test_personaje_no_puede_superar_hp_maximo():
+    # Arrange
+    personaje = Personaje()
+    personaje.hp = 900
+
+    # Act
+    personaje.curar(200)
+
+    # Assert
+    assert personaje.hp == 1000
