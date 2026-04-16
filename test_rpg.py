@@ -83,3 +83,14 @@ def test_personaje_de_menor_nivel_hace_menos_dano():
 
     # Assert
     assert objetivo.hp == 950
+
+def test_personaje_puede_curarse():
+    # Arrange
+    personaje = Personaje()
+    personaje.hp = 500
+
+    # Act
+    personaje.curar(200)
+
+    # Assert
+    assert personaje.hp == 700
