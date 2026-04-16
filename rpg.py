@@ -24,6 +24,9 @@ class Personaje:
             objetivo.esta_vivo = False
 
     def curar(self, cantidad):
+        if not self.esta_vivo:
+            return
+
         self.hp += cantidad
 
         if self.hp > 1000:
