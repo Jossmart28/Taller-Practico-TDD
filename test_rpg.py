@@ -69,3 +69,17 @@ def test_personaje_de_mayor_nivel_hace_mas_dano():
 
     # Assert
     assert objetivo.hp == 850
+
+def test_personaje_de_menor_nivel_hace_menos_dano():
+    # Arrange
+    atacante = Personaje()
+    objetivo = Personaje()
+
+    atacante.nivel = 1
+    objetivo.nivel = 10
+
+    # Act
+    atacante.atacar(objetivo, 100)
+
+    # Assert
+    assert objetivo.hp == 950
