@@ -8,6 +8,9 @@ class Personaje:
         if not self.esta_vivo:
             return
 
+        if self == objetivo:
+            return
+
         objetivo.hp -= dano
 
         if objetivo.hp <= 0:
