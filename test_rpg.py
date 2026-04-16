@@ -31,3 +31,17 @@ def test_personaje_muere_cuando_hp_llega_a_cero():
     # Assert
     assert objetivo.hp == 0
     assert objetivo.esta_vivo == False
+
+def test_personaje_muerto_no_puede_atacar():
+    # Arrange
+    atacante = Personaje()
+    objetivo = Personaje()
+
+    # Matamos al atacante
+    objetivo.atacar(atacante, 1000)
+
+    # Act
+    atacante.atacar(objetivo, 100)
+
+    # Assert
+    assert objetivo.hp == 1000
