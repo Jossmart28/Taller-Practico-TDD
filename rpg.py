@@ -6,3 +6,7 @@ class Personaje:
 
     def atacar(self, objetivo, dano):
         objetivo.hp -= dano
+
+        if objetivo.hp <= 0:
+            objetivo.hp = 0
+            objetivo.esta_vivo = False
