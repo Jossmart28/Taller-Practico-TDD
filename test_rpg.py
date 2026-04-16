@@ -55,3 +55,17 @@ def test_personaje_no_puede_atacarse_a_si_mismo():
 
     # Assert
     assert personaje.hp == 1000
+
+def test_personaje_de_mayor_nivel_hace_mas_dano():
+    # Arrange
+    atacante = Personaje()
+    objetivo = Personaje()
+
+    atacante.nivel = 10
+    objetivo.nivel = 1
+
+    # Act
+    atacante.atacar(objetivo, 100)
+
+    # Assert
+    assert objetivo.hp == 850
