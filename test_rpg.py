@@ -19,3 +19,15 @@ def test_personaje_puede_danar_a_otro():
 
     # Assert
     assert objetivo.hp == 900
+
+def test_personaje_muere_cuando_hp_llega_a_cero():
+    # Arrange
+    atacante = Personaje()
+    objetivo = Personaje()
+
+    # Act
+    atacante.atacar(objetivo, 1000)
+
+    # Assert
+    assert objetivo.hp == 0
+    assert objetivo.esta_vivo == False
