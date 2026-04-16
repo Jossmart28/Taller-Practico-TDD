@@ -25,3 +25,6 @@ class Personaje:
 
     def curar(self, cantidad):
         self.hp += cantidad
+
+        if self.hp > 1000:
+            self.hp = 1000
