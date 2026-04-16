@@ -45,3 +45,13 @@ def test_personaje_muerto_no_puede_atacar():
 
     # Assert
     assert objetivo.hp == 1000
+
+def test_personaje_no_puede_atacarse_a_si_mismo():
+    # Arrange
+    personaje = Personaje()
+
+    # Act
+    personaje.atacar(personaje, 100)
+
+    # Assert
+    assert personaje.hp == 1000
