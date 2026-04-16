@@ -5,6 +5,9 @@ class Personaje:
         self.esta_vivo = True
 
     def atacar(self, objetivo, dano):
+        if not self.esta_vivo:
+            return
+
         objetivo.hp -= dano
 
         if objetivo.hp <= 0:
